@@ -14,8 +14,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-// ImageIO.read(new File("filepath"));
-
 public class BasicImageEncryptor{
     public static void encryptor(int key){      
 
@@ -27,7 +25,6 @@ public class BasicImageEncryptor{
             try{
                 BufferedImage img = ImageIO.read(chosenFile);
                 ImageIcon icon = new ImageIcon(img);
-                // return 0;
             }
             catch(Exception e){
                 System.out.println("Image is already Encrypted");
@@ -66,10 +63,10 @@ public class BasicImageEncryptor{
                 BufferedImage img = ImageIO.read(chosenFile);
                 ImageIcon icon = new ImageIcon(img);
                 System.out.println("Image is already decrypted");
-                // return 0;
+                
             }
             catch(Exception e){
-                // System.out.println("Image is already Encrypted");
+              
                 byte []data = new byte[fis.available()];    
                 fis.read(data);
                 int i=0;
@@ -104,8 +101,7 @@ public class BasicImageEncryptor{
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
-        Font font = new Font("Roboto", Font.BOLD, 25); /////////////////////////////////////////
-
+        Font font = new Font("Roboto", Font.BOLD, 25); 
         JButton encryptBtn = new JButton();
         encryptBtn.setText("Encrypt Image");
         encryptBtn.setFont(font);
@@ -144,11 +140,7 @@ public class BasicImageEncryptor{
 
         frame.add(encryptBtn);
         frame.add(decryptBtn);
-        frame.setVisible(true);
-
-        
-        // ImageIcon image = new ImageIcon("C:\\Users\\HELLO\\OneDrive\\Desktop\\triall.png");
-        // JLabel imageLabel = new JLabel(image); 
-        // add(imageLabel);
+        frame.setVisible(true);     
+   
     }
 }
